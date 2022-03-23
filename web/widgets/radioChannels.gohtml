@@ -1,0 +1,151 @@
+{{ define "content" }}
+<table>
+  <tr>
+    <td>
+      Channel 1:
+    </td>
+    <td>
+      <input 
+        type="text"
+        name="channel_text"
+        value=""
+        hx-post="api/radio/1"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels"
+        hx-swap="innerHTML" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 2:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/2"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 3:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/3"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 4:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/4"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 5:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/5"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 6:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/6"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 7:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/7"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 8:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/8"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 9:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/9"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Channel 10:
+    </td>
+    <td>
+      <input 
+        type="text" 
+        name="channel_text"
+        value=""
+        hx-post="api/radio/10"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#radioChannels" />
+    </td>
+  </tr>
+</table>
+
+<textarea id="radioChannels" name="radioChannels" rows="10" cols="50">
+  /311 
+  📡 Radio status:
+  📢 CH2: Normal Patrol66666666666666
+</textarea>
+{{ end }}
