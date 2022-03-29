@@ -77,7 +77,7 @@ func Process1090Update(w http.ResponseWriter, r *http.Request) {
 }
 
 func Generate1090Message() string {
-	HeistMessage := "/311 ⏰ 10-90 o'Clock Tracker ⏰\n"
+	HeistMessage := "/311 \n⏰ 10-90 o'Clock Tracker ⏰\n"
 	for _, heist := range heists {
 		HeistMessage += fmt.Sprintf("%s: %s\n", heist.status, heist.name)
 	}

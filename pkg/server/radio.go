@@ -38,10 +38,10 @@ func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 }
 
 func GenerateRadioMessage() string {
-	message := "/311 📻 Radio status \n"
+	message := "/311 \n📻 Radio status \n"
 	for i, channel := range Channels {
 		if channel != "" && i != 0 {
-			message += fmt.Sprintf("📢Ch%d: %s\n", i, channel)
+			message += fmt.Sprintf("📢 Ch%d: %s\n", i, channel)
 		}
 	}
 	Channels[0] = message
