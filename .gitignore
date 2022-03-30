@@ -1,5 +1,6 @@
 # Binaries for programs and plugins
 __debug_bin
+dispatch-tools
 *.exe
 *.exe~
 *.dll

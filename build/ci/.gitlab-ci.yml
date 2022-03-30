@@ -36,7 +36,21 @@ format:
 compile:
   stage: build
   script:
-    - go build -race -o $CI_PROJECT_DIR/dispatch-tools ./cmd/server/main.go
+    - GOARCH=amd64 GOOS=linux go build -race -ldflags "-s -extldflags '-static'" -o $CI_PROJECT_DIR/dispatch-tools ./cmd/server/main.go
   artifacts:
     paths:
       - dispatch-tools
+
+deploy_prod:
+  stage: deploy
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+    - when: manual
+  script:
+    - echo "Deploying Application"
+    # - scp $CI_PROJECT_DIR/dispatch-tools $DEPLOY_USER@philderbeast.com:/opt/dispatch-tools/dispatch-tools
+    # - systemctl restart dispatch-tools
+  environment:
+    name: production
+    url: https://dispatch.philderbeast.com

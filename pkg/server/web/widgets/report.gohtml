@@ -1,163 +1,116 @@
 {{ define "content" }}
-<table>
-  <tr>
-    <td>
-      Channel 1:
-    </td>
-    <td>
-      <input 
-        type="text"
-        name="channel_text"
-        value=""
-        hx-post="api/radio/1"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels"
-        hx-swap="innerHTML" />
-    </td>
-    <td>
-      <button type="button" class="btn btn-danger">13a</button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-danger">78s</button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-warning">77s</button>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 2:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/2"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 3:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/3"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 4:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/4"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 5:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/5"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 6:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/6"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 7:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/7"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 8:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/8"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 9:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/9"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Channel 10:
-    </td>
-    <td>
-      <input 
-        type="text" 
-        name="channel_text"
-        value=""
-        hx-post="api/radio/10"
-        hx-trigger="keyup changed delay:500ms"
-        hx-target="#radioChannels" />
-    </td>
-  </tr>
-  <tr>
-    <td colspan=5>
-      <textarea id="radioChannels" name="radioChannels" rows="10" cols="50">
-        /311 
-        📡 Radio status:
-        📢 CH2: Normal Patrol
+<form hx-post="/api/report/" hx-target="#report">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <label for="reportTitle" class="form-label">Report title</label>
+        <input type="text" class="form-control" id="reportTitle" name="reportTitle" placeholder="indicent">
+      </div>
+      <div class="row">
+        <label for="dispatcherName" class="form-label">Dispatcher Name</label>
+        <input type="text" class="form-control" id="dispatcherName" name="dispatcherName" placeholder="D-33 Owen Fitz-Gibbon">
+      </div>
+      <div class="row">
+        <label for="date" class="form-label">Report Date</label>
+        <input type="text" class="form-control" id="date" name="date" placeholder="28 Mar 2022">
+      </div>
+      <div class="row">
+        <label for="time" class="form-label">Report Time</label>
+        <input type="text" class="form-control" id="time" name="time" placeholder="06:00">
+      </div>
+      <div class="row">
+        <label for="Incidentdate" class="form-label">Incident Date</label>
+        <input type="text" class="form-control" id="Incidentdate" name="Incidentdate" placeholder="28 Mar 2022">
+      </div>
+      <div class="row">
+        <label for="Incidenttime" class="form-label">Incident Time</label>
+        <input type="text" class="form-control" id="Incidenttime" name="Incidenttime" placeholder="06:00">
+      </div>
+      <div class="row">
+        <label for="reporterName" class="form-label">Reporter Name</label>
+        <input type="text" class="form-control" id="reporterName" name="reporterName" placeholder="First Last">
+      </div>
+      <div class="row">
+        <label for="reporterSID" class="form-label">Reporter SID</label>
+        <input type="text" class="form-control" id="reporterSID" name="reporterSID" placeholder="12345">
+      </div>
+      <div class="row">
+        <label for="reporterPhNo" class="form-label">Reporter PH#</label>
+        <input type="text" class="form-control" id="reporterPhNo" name="reporterPhNo" placeholder="415-555-5555">
+      </div>
+      <div class="row">
+        <label for="Witness" class="form-label">People Involved/Witnessess</label>
+        <textarea id="Witness" name="Witness" class="form-control" rows="5" placeholder="People Involved/Witnessess Description">
+        </textarea>
+      </div>
+      <div class="row">
+        <label for="Suspect" class="form-label">Suspect Description</label>
+        <textarea id="Suspect" name="Suspect" class="form-control" rows="5" placeholder="Suspect Description">
+        </textarea>
+      </div>
+      <div class="row">
+        <label for="Vehicles" class="form-label">Vehicles</label>
+        <textarea id="Vehicles" name="Vehicles" class="form-control" rows="5" placeholder="Vehicles">
+        </textarea>
+      </div>
+      <div class="row">
+        <label for="location" class="form-label">Incident Location</label>
+        <input type="text" class="form-control" id="location" name="location" placeholder="Alta St Apartments">
+      </div>
+      <div class="row">
+        <label for="Statement" class="form-label">Statement</label>
+        <textarea id="Statement" name="Statement" class="form-control" rows="5" placeholder="Statement">
+        </textarea>
+      </div>
+      <div class="row">
+        <label for="StolenItems" class="form-label">Stolen Items</label>
+        <textarea id="Statement" name="StolenItems" class="form-control" rows="5" placeholder="Stolen Items">
+        </textarea>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row p-3">
+        <button type="submit" class="btn btn-dark">Build
+          Report</button>
+</form>
+      </div>
+      <div class="row p-3">
+        <label for="report" class="form-label">Dispatch Report</label>
+        <textarea id="report" name="report" disabled="true" rows="50" class="form-control">
+Title: Reporting Person's Full Name | Short descriptive title of incident | DD/MM/YYYY 
+
+----
+Dispatch Report:
+Report taken by: Callsign / Name (e.g. D-0 B. Spaghetty)
+Date of Report: DD/MM/YY - 24hr clock EST
+
+Date of Incident: DD/MM/YY - 24hr clock EST
+
+Reporting Person:
+Name: First & Last Name
+SID: List their state ID
+Ph#: List their phone number
+
+Person(s) Involved: (IF APPLICABLE) List any additional people involved/witnesses
+Full Name | SID | Phone number
+
+Suspect Description(s): (IF APPLICABLE) Add as much detail as possible. Gender, hair, clothing, voice/accent, weapon etc. 
+List all suspects separately. 
+Include Name/SID/Ph# if you get that information.
+
+Vehicle Description(s): (IF APPLICABLE) Make/model/color/notable customizations/license plate
+
+Location(s) of Incident: (IF APPLICABLE) Street names and/or descriptions of location
+
+Statement: Add as much detail as possible, accurately recounting the reporting person's words into full sentences with proper grammar and punctuation. 
+
+Stolen Items: (IF APPLICABLE) Bulleted list of all stolen items, including but not limited to cash, guns & food/drink. E.g.:
+- Beretta M9 (Registered to SID 007)
+- $269
+- Cowboy hat
+- 1x lockpick   
       </textarea>
-    </td>
-  </tr>  
-</table>
+      </div>
+    </div>
+  </div>
 {{ end }}
