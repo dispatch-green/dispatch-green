@@ -33,6 +33,7 @@ func main() {
 
 	http.HandleFunc("/api/radio/", server.ProcessRadioUpdate)
 	http.HandleFunc("/api/1090/", server.Process1090Update)
+	http.HandleFunc("/api/report/", server.ProcessReportUpdate)
 
 	http.HandleFunc("/radio", ServeRadioPage)
 	http.HandleFunc("/10-90", Serve1090Page)
