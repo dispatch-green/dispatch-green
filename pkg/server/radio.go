@@ -44,6 +44,7 @@ func GenerateRadioMessage() string {
 			message += fmt.Sprintf("📢 Ch%d: %s\n", i, channel)
 		}
 	}
+	message += "\nIf any other channels are in use or have been closed please reply to this 311"
 	Channels[0] = message
 	return message
 }
