@@ -26,15 +26,18 @@ func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 		}
 
 		channel := strings.TrimPrefix(r.URL.Path, "/api/radio/")
-		i, err := strconv.Atoi(channel)
-		if err != nil {
-			panic(err)
+		if channel == "reset" {
+			ResetChannels()
+		} else {
+			i, err := strconv.Atoi(channel)
+			if err != nil {
+				panic(err)
 
+			}
+			Channels[i] = r.FormValue("channel_text")
 		}
-		Channels[i] = r.FormValue("channel_text")
-
 	}
-	fmt.Fprintf(w, GenerateRadioMessage())
+	fmt.Fprint(w, GenerateRadioMessage())
 }
 
 func GenerateRadioMessage() string {

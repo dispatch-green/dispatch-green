@@ -62,18 +62,21 @@ func Process1090Update(w http.ResponseWriter, r *http.Request) {
 		}
 
 		heist := strings.TrimPrefix(r.URL.Path, "/api/1090/")
-		i, err := strconv.Atoi(heist)
-		if err != nil {
-			panic(err)
+		if heist == "reset" {
+			ResetHeists()
+		} else {
+			i, err := strconv.Atoi(heist)
+			if err != nil {
+				panic(err)
 
-		}
-
-		for _, value := range r.PostForm {
-			heists[i].status = value[0]
+			}
+			for _, value := range r.PostForm {
+				heists[i].status = value[0]
+			}
 		}
 
 	}
-	fmt.Fprintf(w, Generate1090Message())
+	fmt.Fprint(w, Generate1090Message())
 }
 
 func Generate1090Message() string {
