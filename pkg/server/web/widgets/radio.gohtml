@@ -183,7 +183,11 @@
     </td>
   </tr>
   <tr>
-    <td colspan=4>
+    <td colspan="2">
+      <button type="button" name="replymsg" class="btn btn-info" hx-post="/api/radio/replymsg" 
+        hx-target="#radioChannels" hx-swap="innerHTML">Toggle Reply message</button>
+    </td>
+    <td colspan="2">
         <button type="button" class="btn btn-warning" hx-post="/api/radio/reset" 
         hx-target="#radioChannels" hx-swap="innerHTML">Reset</button>
     </td>

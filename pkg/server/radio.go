@@ -8,13 +8,15 @@ import (
 )
 
 var Channels [11]string
+var replymsg bool
 
 func ResetChannels() {
+	replymsg = true
 	for i, _ := range Channels {
 		Channels[i] = ""
 	}
 	Channels[2] = "Normal Patrol"
-	Channels[0] = GenerateRadioMessage()
+	Channels[0] = GenerateRadioMessage(replymsg)
 }
 
 func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
@@ -28,6 +30,8 @@ func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 		channel := strings.TrimPrefix(r.URL.Path, "/api/radio/")
 		if channel == "reset" {
 			ResetChannels()
+		} else if channel == "replymsg" {
+			replymsg = !replymsg
 		} else {
 			i, err := strconv.Atoi(channel)
 			if err != nil {
@@ -37,17 +41,19 @@ func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 			Channels[i] = r.FormValue("channel_text")
 		}
 	}
-	fmt.Fprint(w, GenerateRadioMessage())
+	fmt.Fprint(w, GenerateRadioMessage(replymsg))
 }
 
-func GenerateRadioMessage() string {
+func GenerateRadioMessage(replymsg bool) string {
 	message := "/311 \n📻 Radio status \n"
 	for i, channel := range Channels {
 		if channel != "" && i != 0 {
 			message += fmt.Sprintf("📢 Ch%d: %s\n", i, channel)
 		}
 	}
-	message += "\nIf any other channels are in use or have been closed please reply to this 311"
+	if replymsg {
+		message += "\nIf any other channels are in use or have been closed please reply to this 311"
+	}
 	Channels[0] = message
 	return message
 }
