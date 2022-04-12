@@ -220,4 +220,15 @@
     </td>
   </tr>
 </table>
+
+<script>
+  document.body.addEventListener('htmx:beforeSwap', function (evt) {
+    if (document.hasFocus() && 
+        document.getElementById('trackerMessage').value !== evt.detail.serverResponse) {
+      console.log('Copying message to clipboard');
+      navigator.clipboard.writeText(evt.detail.serverResponse);
+    }
+  });
+</script>
+
 {{end}}
