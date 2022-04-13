@@ -25,3 +25,6 @@ dispatch-tools
 
 # Local History for Visual Studio Code
 .history/
+
+# application save files
+channels.json

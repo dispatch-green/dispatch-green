@@ -1,8 +1,11 @@
 package server
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -19,6 +22,31 @@ func ResetChannels() {
 	Channels[0] = GenerateRadioMessage(replymsg)
 }
 
+func LoadChannels() {
+	channelFile, err := os.Open("./channels.json")
+	if err != nil {
+		return
+	}
+
+	byteValue, _ := ioutil.ReadAll(channelFile)
+
+	err = json.Unmarshal(byteValue, &Channels)
+	if err != nil {
+		return
+	}
+
+	fmt.Println(Channels)
+
+}
+
+func SaveChannels() {
+	cJson, _ := json.Marshal(Channels)
+	err := os.WriteFile("./channels.json", cJson, 0644)
+	if err != nil {
+		panic(err)
+	}
+}
+
 func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == "POST" {
@@ -30,6 +58,7 @@ func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 		channel := strings.TrimPrefix(r.URL.Path, "/api/radio/")
 		if channel == "reset" {
 			ResetChannels()
+			SaveChannels()
 		} else if channel == "replymsg" {
 			replymsg = !replymsg
 		} else {
@@ -39,6 +68,7 @@ func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 
 			}
 			Channels[i] = r.FormValue("channel_text")
+			SaveChannels()
 		}
 	}
 	fmt.Fprint(w, GenerateRadioMessage(replymsg))

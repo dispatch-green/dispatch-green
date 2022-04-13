@@ -26,6 +26,7 @@ func main() {
 	cfg = loadConfig()
 
 	server.ResetChannels()
+	server.LoadChannels()
 	server.ResetHeists()
 
 	// serve static files
