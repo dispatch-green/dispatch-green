@@ -6,7 +6,7 @@
       Channel 1:
     </td>
     <td>
-      <input type="text" name="channel_text" value="{{index . 1}}" hx-post="/api/radio/1"
+      <input type="text" name="channel_text" placeholder="SRU" value="{{index . 1}}" hx-post="/api/radio/1"
         hx-trigger="keyup changed delay:500ms" hx-target="#radioChannels" hx-swap="innerHTML" />
     </td>
     <td>
@@ -145,7 +145,7 @@
       Channel 9:
     </td>
     <td>
-      <input type="text" name="channel_text" value="{{index . 9}}" hx-post="/api/radio/9"
+      <input type="text" name="channel_text" value="{{index . 9}}" hx-post="/api/radio/9" placeholder="BTF"
         hx-trigger="keyup changed delay:500ms" hx-target="#radioChannels" />
     </td>
     <td>
