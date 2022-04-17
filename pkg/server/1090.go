@@ -17,10 +17,10 @@ var HeistMessage string
 
 func ResetHeists() {
 	heists = []heist{
-		{
-			status: "❌",
-			name:   "Bay City Bank",
-		},
+		// {
+		// 	status: "❌",
+		// 	name:   "Bay City Bank",
+		// },
 		{
 			status: "❌",
 			name:   "Fleeca GOHWY",
