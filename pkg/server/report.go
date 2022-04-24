@@ -15,7 +15,8 @@ func ProcessReportUpdate(w http.ResponseWriter, r *http.Request) {
 
 		report := fmt.Sprintf("Title: %s | %s | %s \n", r.PostFormValue("reporterName"), r.PostFormValue("reportTitle"), r.PostFormValue("date"))
 		report += "\n"
-		report += "----"
+		report += "----\n"
+		report += "\n"
 		report += "Dispatch Report:\n"
 		report += fmt.Sprintf("Report taken by: %s\n", r.PostFormValue("dispatcherName"))
 		report += fmt.Sprintf("Date of Report: %s - %s\n", r.PostFormValue("date"), r.PostFormValue("time"))
