@@ -3,10 +3,12 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
 
+	"github.com/gorilla/websocket"
 	"gitlab.com/p6339/nopixel/dispatch-tools/pkg/server"
 	"gopkg.in/yaml.v2"
 )
@@ -14,6 +16,8 @@ import (
 var CONFIG_LOCATIONS = [2]string{
 	"configs/config.yml",
 	"config.yml"}
+
+var upgrader = websocket.Upgrader{}
 
 type Config struct {
 	Port int `yaml:"port"`
@@ -25,17 +29,24 @@ func main() {
 
 	cfg = loadConfig()
 
+	// load defaults
 	server.ResetChannels()
-	server.LoadChannels()
 	server.ResetHeists()
+	server.CreateHub()
+
+	// load channels if they are available
+	server.LoadChannels()
 
 	// serve static files
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.FS(server.Static))))
 
+	// api calls
 	http.HandleFunc("/api/radio/", server.ProcessRadioUpdate)
 	http.HandleFunc("/api/1090/", server.Process1090Update)
 	http.HandleFunc("/api/report/", server.ProcessReportUpdate)
+	http.HandleFunc("/api/radiows", wsUpgrade)
 
+	// dynamic pages
 	http.HandleFunc("/radio", ServeRadioPage)
 	http.HandleFunc("/10-90", Serve1090Page)
 	http.HandleFunc("/report", ServeReportPage)
@@ -106,4 +117,16 @@ func ServeReportPage(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	tmpl.ExecuteTemplate(w, "index.gohtml", server.Channels)
+}
+
+func wsUpgrade(w http.ResponseWriter, r *http.Request) {
+	log.Println("upgrading websocket")
+
+	ws, err := upgrader.Upgrade(w, r, nil)
+	if err != nil {
+		log.Print("upgrade failed: ", err)
+		return
+	}
+
+	server.RegisterClient(ws, server.RadioHub)
 }
