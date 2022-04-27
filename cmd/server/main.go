@@ -10,6 +10,7 @@ import (
 
 	"github.com/gorilla/websocket"
 	"gitlab.com/p6339/nopixel/dispatch-tools/pkg/server"
+	"gitlab.com/p6339/nopixel/dispatch-tools/pkg/utils"
 	"gopkg.in/yaml.v2"
 )
 
@@ -21,6 +22,11 @@ var upgrader = websocket.Upgrader{}
 
 type Config struct {
 	Port int `yaml:"port"`
+}
+
+type reportData struct {
+	Date string
+	Time string
 }
 
 var cfg Config
@@ -116,7 +122,11 @@ func ServeReportPage(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-	tmpl.ExecuteTemplate(w, "index.gohtml", server.Channels)
+	data := reportData{
+		Date: utils.GetDate(),
+		Time: utils.GetTime(),
+	}
+	tmpl.ExecuteTemplate(w, "index.gohtml", data)
 }
 
 func wsUpgrade(w http.ResponseWriter, r *http.Request) {

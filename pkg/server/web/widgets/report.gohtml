@@ -12,19 +12,19 @@
       </div>
       <div class="row">
         <label for="date" class="form-label">Report Date</label>
-        <input type="text" class="form-control" id="date" name="date" placeholder="28 Mar 2022">
+        <input type="text" class="form-control" id="date" name="date" value="{{ .Date }}">
       </div>
       <div class="row">
         <label for="time" class="form-label">Report Time</label>
-        <input type="text" class="form-control" id="time" name="time" placeholder="06:00">
+        <input type="text" class="form-control" id="time" name="time" value="{{ .Time }}">
       </div>
       <div class="row">
         <label for="Incidentdate" class="form-label">Incident Date</label>
-        <input type="text" class="form-control" id="Incidentdate" name="Incidentdate" placeholder="28 Mar 2022">
+        <input type="text" class="form-control" id="Incidentdate" name="Incidentdate" value="{{ .Date }}">
       </div>
       <div class="row">
         <label for="Incidenttime" class="form-label">Incident Time</label>
-        <input type="text" class="form-control" id="Incidenttime" name="Incidenttime" placeholder="06:00">
+        <input type="text" class="form-control" id="Incidenttime" name="Incidenttime" value="{{ .Time }}">
       </div>
       <div class="row">
         <label for="reporterName" class="form-label">Reporter Name</label>
