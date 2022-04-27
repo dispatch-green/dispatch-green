@@ -12,14 +12,15 @@ import (
 
 var Channels [11]string
 var replymsg bool
+var RadioHub *Hub
+
+func CreateHub() {
+	RadioHub = newHub()
+}
 
 func ResetChannels() {
 	replymsg = true
-	for i, _ := range Channels {
-		Channels[i] = ""
-	}
-	Channels[2] = "Normal Patrol"
-	Channels[0] = GenerateRadioMessage(replymsg)
+	Channels = [11]string{GenerateRadioMessage(replymsg), "", "Normal Patrol", "", "", "", "", "", "", "", ""}
 }
 
 func LoadChannels() {
@@ -34,9 +35,6 @@ func LoadChannels() {
 	if err != nil {
 		return
 	}
-
-	fmt.Println(Channels)
-
 }
 
 func SaveChannels() {
@@ -69,9 +67,12 @@ func ProcessRadioUpdate(w http.ResponseWriter, r *http.Request) {
 			}
 			Channels[i] = r.FormValue("channel_text")
 			SaveChannels()
+			message := "<textarea id=\"radioChannels\" name=\"radioChannels\" rows=\"10\" class=\"form-control\">\n"
+			message += GenerateRadioMessage(replymsg)
+			message += "\n</textarea>"
+			RadioHub.broadcast <- []byte(message)
 		}
 	}
-	fmt.Fprint(w, GenerateRadioMessage(replymsg))
 }
 
 func GenerateRadioMessage(replymsg bool) string {
@@ -84,6 +85,7 @@ func GenerateRadioMessage(replymsg bool) string {
 	if replymsg {
 		message += "\nIf any other channels are in use or have been closed please reply to this 311"
 	}
+
 	Channels[0] = message
 	return message
 }
