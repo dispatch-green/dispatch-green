@@ -7,7 +7,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/ThePhilderbeast/NpQueueBot/pkg/server"
+	"gitlab.com/p6339/nopixel/dispatch-tools/pkg/server"
 	"gopkg.in/yaml.v2"
 )
 

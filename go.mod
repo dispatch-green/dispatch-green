@@ -1,4 +1,4 @@
-module github.com/ThePhilderbeast/NpQueueBot
+module gitlab.com/p6339/nopixel/dispatch-tools
 
 go 1.18
 
