@@ -1,0 +1,377 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Blank template</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+   <h1>NoPixel Dispatch Tools</h1>
+    
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>NoPixel Dispatch Tools</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+    <link href="static/css/custom.css" rel="stylesheet">
+  
+  <style>
+  
+	.sticky-div {
+		position: fixed;
+		width: 1305px
+	}
+	
+  </style>
+  
+  </head>
+
+  <body>
+  
+  <div class="container">
+  
+	  <div class="sticky-div">
+      <div class="Testing">
+        <textarea id="radioChannels" name="radioChannels" rows="10" class="form-control">
+/311 
+Current Radio channels:
+📢 Ch 2: Normal Patrol | 1x Dispatch
+
+Please let dispatch know of opened or collapsed channels.
+        </textarea>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="container">
+  
+	  <div class="textBox">
+		<div class="Testing">
+		  <textarea id="radioChannels" name="radioChannels" rows="10" class="form-control"></textarea>
+		</div>
+	  </div>
+  
+  </div>
+  
+  <div class="container">
+  
+  <div class="row py-1">
+    <label for="channel1" class="col-md-2 col-form-label">Channel 1:</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel1" type="text" name="channel_text" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 1 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 1 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+  
+  <div class="row py-1">
+    <label for="channel2" class="col-md-2 col-form-label">Channel 2:</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel2" type="text" name="channel_text" value="Normal Patrol | 1x Dispatch" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 2 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 2 📢');">📢 78s 📢</button>
+    </div>
+	</div>
+	
+  <div class="row py-1">
+    <label for="channel3" class="col-md-2 col-form-label">Channel 3</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel3" type="text" name="channel_text" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 3 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 3 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel4" class="col-md-2 col-form-label">Channel 4</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel4" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 4 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 4 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel5" class="col-md-2 col-form-label">Channel 5</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel5" type="text" name="channel_text" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 5 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 5 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel6" class="col-md-2 col-form-label">Channel 6</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel6" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 6 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 6 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel7" class="col-md-2 col-form-label">Channel 7</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel7" type="text" name="channel_text" value="" placeholder="SCU"/>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 7 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 7 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel8" class="col-md-2 col-form-label">Channel 8</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel8" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 8 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 8 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel9" class="col-md-2 col-form-label">Channel 9</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel9" type="text" name="channel_text" value="" placeholder="Doctors" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 9 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 9 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel10" class="col-md-2 col-form-label">Channel 10</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel10" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 10 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 10 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+  
+  <div class="row py-1">
+    <label for="channel11" class="col-md-2 col-form-label">Channel 11:</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel11" type="text" name="channel_text" placeholder="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 11 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 11 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+  
+  <div class="row py-1">
+    <label for="channel12" class="col-md-2 col-form-label">Channel 12:</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel12" type="text" name="channel_text" placeholder="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 12 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 12 📢');">📢 78s 📢</button>
+    </div>
+	</div>
+	
+  <div class="row py-1">
+    <label for="channel13" class="col-md-2 col-form-label">Channel 13</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel13" type="text" name="channel_text" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 13 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 13 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel14" class="col-md-2 col-form-label">Channel 14</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel14" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 14 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 14 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel15" class="col-md-2 col-form-label">Channel 15</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel15" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 15 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 15 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel16" class="col-md-2 col-form-label">Channel 16</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel16" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 16 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 16 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel17" class="col-md-2 col-form-label">Channel 17</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel17" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 17 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 17 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel8" class="col-md-2 col-form-label">Channel 18</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel18" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 18 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 18 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel19" class="col-md-2 col-form-label">Channel 19</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel19" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 19 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 19 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+  <div class="row py-1">
+    <label for="channel20" class="col-md-2 col-form-label">Channel 20</label>
+    <div class="col-5 d-grid px-1">
+      <input id="channel20" type="text" name="channel_text" value="" />
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 🚨 13A Channel 20 🚨');">🚨 13a 🚨</button>
+    </div>
+    <div class="col d-grid px-1">
+      <button type="button" class="btn btn-danger"
+        onclick="navigator.clipboard.writeText('/311 📢 78s  Channel 20 📢');">📢 78s 📢</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="scripts.js" type="text/javascript"></script>
+
+    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+  </html> 
